@@ -55,7 +55,7 @@ body {
   position: absolute;
 }
 #home h1 {
-  margin: 150px 0 0 50px;
+  margin: 100px 0 0 50px;
 }
 #home div.save-the-date {
   position: absolute;
@@ -85,4 +85,18 @@ body {
 #story {
   width: 100%;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  #home h1 img {
+    width: 400px;
+  }
+}
+@media (max-width: 480px) {
+  #home h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #home h1 img {
+    width: 300px;
+  }
 }
