@@ -83,8 +83,25 @@ body {
   width: 100%;
 }
 #story {
+  height: 300px;
   width: 100%;
   position: relative;
+  margin-top: 20px;
+}
+#story h2 {
+  font-family: 'Carolina Mountains';
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+#story div.mapheartsvg {
+  display: inline-block;
+  width: 24.5%;
+}
+#story div.mapheartsvg svg {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 @media only screen and (max-width: 768px) {
   #home h1 img {

@@ -34,6 +34,7 @@ body {
 			float: left;
 	    	margin: 12px 15px;
 	    	display: none;
+	    	//display: block;
 		}
 		&:not(.home):hover,
 		&:not(.home):active,
@@ -94,8 +95,25 @@ body {
 }
 
 #story {	
+	height: 300px;
 	width: 100%;
 	position: relative;
+	margin-top: 20px;
+	h2 {
+		font-family: 'Carolina Mountains';
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 30px;
+	}
+	div.mapheartsvg {
+		display: inline-block;
+		width: 24.5%;
+		svg {
+			margin-right: auto;	
+			margin-left: auto;
+			display: block;
+		}
+	}
 }
 
 @media only screen and (max-width : 768px) {
