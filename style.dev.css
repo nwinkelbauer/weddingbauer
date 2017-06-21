@@ -13,6 +13,23 @@
 body {
   margin: 0;
 }
+h2,
+h3 {
+  font-family: 'Carolina Mountains';
+}
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 24px;
+}
+p {
+  font-family: 'Weddingbauer';
+  font-size: 36px;
+  margin: 15px 0;
+}
 #header {
   z-index: 10;
   width: 100%;
@@ -69,8 +86,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
 }
 #home div.save-the-date p {
-  width: 100%;
-  margin-top: 30px;
+  margin: 30px 15px 40px 15px;
   font-size: 40px;
   font-family: 'Weddingbauer';
   color: white;
@@ -83,16 +99,10 @@ body {
   width: 100%;
 }
 #story {
-  height: 300px;
-  width: 100%;
+  height: 100%;
+  width: 1150px;
   position: relative;
-  margin-top: 20px;
-}
-#story h2 {
-  font-family: 'Carolina Mountains';
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 30px;
+  margin: 30px auto 30px auto;
 }
 #story div.mapheartsvg {
   display: inline-block;
@@ -103,9 +113,115 @@ body {
   margin-left: auto;
   display: block;
 }
+#story div.mapheartsvg svg .svg-heart-text {
+  font-family: Weddingbauer;
+  font-size: 80px;
+  display: none;
+}
+#story div.mapheartsvg svg:hover .hovercolor,
+#story div.mapheartsvg svg:focus .hovercolor,
+#story div.mapheartsvg svg:active .hovercolor {
+  fill: rgba(255, 255, 255, 0.6);
+}
+#story div.mapheartsvg svg:hover .svg-heart-text,
+#story div.mapheartsvg svg:focus .svg-heart-text,
+#story div.mapheartsvg svg:active .svg-heart-text {
+  display: block;
+  fill: black;
+}
+#story div.mapheartsvg p {
+  text-align: center;
+  font-family: 'Carolina Mountains';
+  font-size: 24px;
+  margin-top: 0;
+}
+div.scroll-over-image {
+  width: 100%;
+  height: 300px;
+  background: url("assets/bg2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+div.scroll-over-image.second {
+  background: url("assets/bg1.jpg") no-repeat center center fixed;
+}
+#details {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+#details .container {
+  margin: 50px;
+}
+#details span.contact {
+  font-size: 28px;
+}
+#details span.location {
+  font-size: 40px;
+}
+#details div.details-block {
+  vertical-align: top;
+}
+#details div.details-block:nth-child(even) {
+  text-align: left;
+  float: left;
+}
+#details div.details-block:nth-child(odd) {
+  text-align: right;
+  float: right;
+}
+#details div.details-block div {
+  margin-bottom: 40px;
+}
+#details svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+#location-map {
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  border-top: 1px black solid;
+}
+#rsvp {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+#rsvp iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+@media only screen and (max-width: 1200px) {
+  #story {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 930px) {
+  #story span.heart-block {
+    display: block;
+    text-align: center;
+  }
+  #story span.heart-block div.mapheartsvg {
+    width: 230px;
+  }
+}
 @media only screen and (max-width: 768px) {
   #home h1 img {
     width: 400px;
+  }
+  #details svg {
+    width: auto;
+  }
+  #details .container {
+    margin: 30px;
   }
 }
 @media (max-width: 480px) {
@@ -116,5 +232,8 @@ body {
   }
   #home h1 img {
     width: 300px;
+  }
+  #details svg {
+    right: 260px;
   }
 }

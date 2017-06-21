@@ -17,6 +17,26 @@ body {
 	margin: 0;
 }
 
+h2 , h3 {
+	font-family: 'Carolina Mountains';
+}
+
+h2 {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+p {
+	font-family: 'Weddingbauer';
+	font-size: 36px;
+	margin: 15px 0;
+}
+
 #header {
 	z-index: 10;
 	width: 100%;
@@ -77,8 +97,7 @@ body {
 	    background: -moz-linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5), rgba(0,0,0,0.8)); 
 	    background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5), rgba(0,0,0,0.8));
 		p {
-			width: 100%;
-		    margin-top: 30px;
+			margin: 30px 15px 40px 15px;
 		    font-size: 40px;
 		    font-family: 'Weddingbauer';
 			color: white;
@@ -95,16 +114,10 @@ body {
 }
 
 #story {	
-	height: 300px;
-	width: 100%;
+	height: 100%;
+	width: 1150px;
 	position: relative;
-	margin-top: 20px;
-	h2 {
-		font-family: 'Carolina Mountains';
-		margin-bottom: 20px;
-		text-align: center;
-		font-size: 30px;
-	}
+	margin: 30px auto 30px auto;
 	div.mapheartsvg {
 		display: inline-block;
 		width: 24.5%;
@@ -112,15 +125,139 @@ body {
 			margin-right: auto;	
 			margin-left: auto;
 			display: block;
+			.svg-heart-text {
+				//fill: white;
+			    font-family: Weddingbauer;
+			    font-size: 80px;
+			    display: none;
+			    // -webkit-transition: fill 1s;
+			    // -moz-transition: fill 1s;
+			    // -o-transition: fill 1s;
+			    // transition: fill 1s;
+			    
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				.hovercolor {
+					fill: rgba(255, 255, 255, 0.6);
+				}
+				.svg-heart-text {
+					display: block;
+					fill: black;
+				}
+			}
+
+		}
+		p {
+			text-align: center;
+			font-family: 'Carolina Mountains';
+			font-size: 24px;
+			margin-top: 0;
 		}
 	}
+}
+
+div.scroll-over-image {
+	width: 100%;
+	height: 300px;
+	background: url("assets/bg2.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	&.second{
+		background: url("assets/bg1.jpg") no-repeat center center fixed;
+	}
+}
+
+#details {
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	.container {
+		margin: 50px;
+	}
+	span.contact {
+		font-size: 28px;
+	}
+	span.location {
+		font-size: 40px;
+	}
+	div.details-block {
+		vertical-align: top;
+		//display: inline-block;
+		&:nth-child(even){
+			text-align: left;
+			float: left;
+		}
+		&:nth-child(odd){
+			text-align: right;
+			float: right;
+		}
+		div {
+			margin-bottom: 40px;
+		}
+	}
+	svg {
+		position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 400px;
+	}
+}
+
+#location-map {
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	border-top: 1px black solid;
+}
+
+#rsvp {
+	position: relative;
+	//display: inline-block;
+	height: 100%;
+	width: 100%;
+	iframe {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+	}
+}
+
+@media only screen and (max-width : 1200px) {
+	#story {
+		width: 95%;
+	}
+
+}
+
+@media only screen and (max-width : 930px) {
+	#story span.heart-block{
+		display: block;
+		text-align: center;
+		div.mapheartsvg {
+			width: 230px;
+		}
+	}
+
 }
 
 @media only screen and (max-width : 768px) {
 	#home h1 img {
 		width: 400px;
 	}
-
+	#details {
+		svg {
+			width: auto;
+		}
+		.container {
+			margin: 30px;
+		}
+	}
 }
 
 @media(max-width:480px) {
@@ -131,5 +268,8 @@ body {
 		img {
 			width: 300px;
 		}
+	}
+	#details svg {
+		right: 260px;
 	}
 }
