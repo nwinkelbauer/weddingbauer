@@ -32,7 +32,8 @@ module.exports = function(grunt) {
 		        cleancss: true
 			},
 			files: {
-				'style.css': 'less/style.less'
+				'style.css': 'less/style.less',
+        'rsvp.css' : 'less/rsvp.less'
 			}
 		},
 		development: {
