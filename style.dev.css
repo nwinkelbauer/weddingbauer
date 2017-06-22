@@ -190,14 +190,62 @@ div.scroll-over-image.second {
   border-top: 1px black solid;
 }
 #rsvp {
-  position: relative;
-  height: 100%;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto 0 auto;
 }
-#rsvp iframe {
-  height: 100%;
+#rsvp #wuf-adv {
+  display: none;
+}
+#registry {
   width: 100%;
-  position: absolute;
+  background: burlywood;
+  border-top: 1px dotted #CCCCCC;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+#registry img {
+  display: block;
+  margin: auto;
+}
+#registry a.zola-registry-link button {
+  height: 40px;
+  background-color: #01b4c0;
+  color: #FFF;
+  font-family: 'Weddingbauer';
+  font-size: 30px;
+  text-decoration: none;
+  margin: 20px;
+  border: 1px solid transparent;
+  box-shadow: 2px 1px 3px black;
+  padding: 0 10px;
+}
+#footer {
+  width: 100%;
+  border-top: 1px dotted #CCCCCC;
+  text-align: center;
+  padding: 20px 0;
+}
+#footer a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Carolina Mountains';
+  font-size: 20px;
+}
+#footer a.home {
+  margin: 12px 15px;
+  display: block;
+}
+#footer a.home img {
+  height: 30px;
+}
+#footer a:not(.home):hover,
+#footer a:not(.home):active,
+#footer a:not(.home):focus {
+  text-decoration: underline;
+}
+#footer ul li {
+  display: inline-block;
+  margin: 10px;
 }
 @media only screen and (max-width: 1200px) {
   #story {
