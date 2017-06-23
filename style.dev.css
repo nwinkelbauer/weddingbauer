@@ -33,6 +33,7 @@ p {
 #header {
   z-index: 10;
   width: 100%;
+  height: 55px;
   background-color: rgba(255, 255, 255, 0.95);
   position: fixed;
   top: 0;
@@ -53,6 +54,19 @@ p {
 #header a:not(.home):active,
 #header a:not(.home):focus {
   text-decoration: underline;
+}
+#header button {
+  padding: 0;
+  border: 0;
+  float: right;
+  background: none;
+  display: none;
+  z-index: 10;
+}
+#header button svg {
+  height: 25px;
+  width: auto;
+  margin: 15px;
 }
 #header ul {
   float: right;
@@ -187,7 +201,6 @@ div.scroll-over-image.second {
   width: 100%;
   height: 300px;
   background-color: white;
-  border-top: 1px black solid;
 }
 #rsvp {
   width: 70%;
@@ -198,9 +211,11 @@ div.scroll-over-image.second {
 }
 #registry {
   width: 100%;
-  background: burlywood;
+  background: url('assets/BG-tree.jpg') no-repeat center center;
+  background-size: cover;
   border-top: 1px dotted #CCCCCC;
   margin: 0 auto 0 auto;
+  padding: 40px 0 20px 0;
   text-align: center;
 }
 #registry img {
@@ -218,6 +233,7 @@ div.scroll-over-image.second {
   border: 1px solid transparent;
   box-shadow: 2px 1px 3px black;
   padding: 0 10px;
+  cursor: pointer;
 }
 #footer {
   width: 100%;
@@ -262,11 +278,44 @@ div.scroll-over-image.second {
   }
 }
 @media only screen and (max-width: 768px) {
+  #header a.home.past-first {
+    display: block;
+  }
+  #header button {
+    display: inline-block;
+  }
+  #header ul {
+    float: none;
+    display: none;
+  }
+  #header ul li {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #header ul li a {
+    font-size: 24px;
+  }
+  #header.mobile-open a.home {
+    text-align: center;
+    float: none;
+  }
+  #header.mobile-open button {
+    display: none;
+  }
+  #header.mobile-open ul {
+    display: block;
+  }
   #home h1 img {
     width: 400px;
   }
+  #details .details-block {
+    width: 100%;
+  }
   #details svg {
     width: auto;
+    right: 230px;
+    left: inherit;
   }
   #details .container {
     margin: 30px;
@@ -280,8 +329,5 @@ div.scroll-over-image.second {
   }
   #home h1 img {
     width: 300px;
-  }
-  #details svg {
-    right: 260px;
   }
 }

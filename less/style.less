@@ -40,6 +40,7 @@ p {
 #header {
 	z-index: 10;
 	width: 100%;
+	height: 55px;
 	background-color: rgba(255, 255, 255, .95);
 	position: fixed;
 	top: 0;
@@ -60,6 +61,19 @@ p {
 		&:not(.home):active,
 		&:not(.home):focus {
 			text-decoration: underline;
+		}
+	}
+	button {
+		padding: 0;
+	    border: 0;
+	    float: right;
+	    background: none;
+	    display: none;
+	    z-index: 10;
+		svg {
+			height: 25px;
+			width: auto;
+			margin: 15px;
 		}
 	}
 
@@ -213,7 +227,7 @@ div.scroll-over-image {
 	width: 100%;
 	height: 300px;
 	background-color: white;
-	border-top: 1px black solid;
+	//border-top: 1px black solid;
 }
 
 #rsvp {
@@ -226,9 +240,11 @@ div.scroll-over-image {
 
 #registry {
 	width: 100%;
-	background: burlywood;
+	background: url('assets/BG-tree.jpg') no-repeat center center;
+	background-size: cover; 
 	border-top: 1px dotted #CCCCCC;
 	margin: 0 auto 0 auto;
+	padding: 40px 0 20px 0;
 	text-align: center;
 	img {
 		display: block;
@@ -245,6 +261,7 @@ div.scroll-over-image {
 		border: 1px solid transparent;
 		box-shadow: 2px 1px 3px black;
 		padding: 0 10px;
+		cursor: pointer;
 	}
 }
 
@@ -299,12 +316,52 @@ div.scroll-over-image {
 }
 
 @media only screen and (max-width : 768px) {
+	#header {
+		a.home {
+			//display:block;
+			&.past-first {
+				display: block;
+			}
+		}
+		button {
+			display: inline-block;
+		}
+		ul {
+			float: none;
+			display: none;
+			li {
+				display: block;
+				text-align: center;
+				margin-bottom: 10px;
+				a {
+					font-size: 24px;
+				}
+			}
+		}
+		&.mobile-open {
+			a.home{
+				text-align: center;
+				float: none;
+			}
+			button {
+				display: none;
+			}
+			ul {
+				display: block;
+			}
+		}
+	}
 	#home h1 img {
 		width: 400px;
 	}
 	#details {
+		.details-block {
+			width: 100%;
+		}
 		svg {
 			width: auto;
+			right: 230px;
+			left: inherit;
 		}
 		.container {
 			margin: 30px;
@@ -320,8 +377,5 @@ div.scroll-over-image {
 		img {
 			width: 300px;
 		}
-	}
-	#details svg {
-		right: 260px;
 	}
 }

@@ -110,7 +110,12 @@ function initMap() {
           map: map
         });
 }
+window.onload = function(){
+	
+	$("#mobile-nav").on("click" , function(){
+		console.log('e');
+	});
+	console.log("esdf")
 
-// function initForm () {
-// 	var existingForm = FormApp.openById('1FAIpQLSebPFbZDd5hdfkDGIZlQUt8GiofzLxIVPwhkZ2-MQxfjicYFA');
-// }
+
+}();
