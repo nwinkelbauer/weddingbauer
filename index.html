@@ -8,11 +8,6 @@
   <title> The Winkelbauers </title>
 
   <link rel='stylesheet' id='style-css'  href='style.css' type='text/css' media='all' />
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-  <script type='text/javascript' src='js/site.js'></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxydikQXieccPGreddQF7h6uXPo81MG_w&callback=initMap">
-    </script>
 </head>
 <body>
 
@@ -25,7 +20,8 @@
     <button id="mobile-nav">
       <svg width="18px" height="15px" viewBox="0 0 18 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g>
-                <path d="M17.1000204,12.1245672 L17.1000204,13.5509888 C17.1000204,13.941026 16.7771684,14.2641997 16.3875195,14.2641997 L0.712500849,14.2641997 C0.322851947,14.2641997 0,13.941026 0,13.5509888 L0,12.1245672 C0,11.73453 0.322851947,11.4113563 0.712500849,11.4113563 L16.3875195,11.4113563 C16.7771684,11.4113563 17.1000204,11.73453 17.1000204,12.1245672 Z M17.1000204,6.41888049 L17.1000204,7.84530216 C17.1000204,8.23533933 16.7771684,8.55851299 16.3875195,8.55851299 L0.712500849,8.55851299 C0.322851947,8.55851299 0,8.23533933 0,7.84530216 L0,6.41888049 C0,6.02884332 0.322851947,5.70566966 0.712500849,5.70566966 L16.3875195,5.70566966 C16.7771684,5.70566966 17.1000204,6.02884332 17.1000204,6.41888049 Z M17.1000204,0.713193829 L17.1000204,2.13961549 C17.1000204,2.52965267 16.7771684,2.85282633 16.3875195,2.85282633 L0.712500849,2.85282633 C0.322851947,2.85282633 0,2.52965267 0,2.13961549 L0,0.713193829 C0,0.323156654 0.322851947,-1.70042511e-05 0.712500849,-1.70042511e-05 L16.3875195,-1.70042511e-05 C16.7771684,-1.70042511e-05 17.1000204,0.323156654 17.1000204,0.713193829 Z" id="Icons/Menu-hamburger"></path>
+                <path d="M17.95 12.275v1.427c0 .39-.323.713-.712.713H1.563a.718.718 0 0 1-.713-.713v-1.427c0-.39.323-.713.713-.713h15.675c.39 0 .712.323.712.713zm0-5.706v1.427c0 .39-.323.713-.712.713H1.563a.718.718 0 0 1-.713-.713V6.569c0-.39.323-.713.713-.713h15.675c.39 0 .712.323.712.713zm0-5.705V2.29c0 .39-.323.713-.712.713H1.563A.718.718 0 0 1 .85 2.29V.864c0-.39.323-.713.713-.713h15.675c.39 0 .712.323.712.713z" id="hamburger"></path>
+                <path d="M13.3 11.162c0-.278-.11-.557-.311-.757L9.716 7.128l3.273-3.276a1.081 1.081 0 0 0 0-1.516L11.475.821a1.08 1.08 0 0 0-.757-.312A1.08 1.08 0 0 0 9.96.82L6.688 4.097 3.414.821a1.08 1.08 0 0 0-.757-.312A1.08 1.08 0 0 0 1.9.82L.386 2.336a1.081 1.081 0 0 0 0 1.516L3.66 7.128.386 10.405a1.081 1.081 0 0 0 0 1.515L1.9 13.436c.2.2.48.312.757.312.279 0 .557-.112.757-.312l3.274-3.277 3.273 3.277c.2.2.478.312.757.312.278 0 .556-.112.757-.312l1.514-1.516c.2-.2.311-.48.311-.758z" id="close" style="visibility:hidden;"></path>
             </g>
         </svg>
       </button>
@@ -52,8 +48,9 @@
 
 </header>
 
-<div id="home">
-	<div>
+<div id="home" class="parallaxParent">
+	<div class="parallaxChild parallax"></div>
+  <div class="parallaxText parallax">
 		<!-- logo & save the date text -->
 		<h1>
 			<a href="">
@@ -149,7 +146,7 @@
   </span>
 	</div>
 
-  <div class="scroll-over-image"></div>
+  <div id="scroll-over-1" class="scroll-over-image"><div></div></div>
 
 	<div id="details">
     <div class="container">
@@ -171,7 +168,7 @@
       </div>
     </div>
     <div class="details-block">
-      <div>
+      <!-- <div>
         <h3>Local Accomodations</h3>
         <p>
           <span class="location">Woodland Meadow Farms</span></br>
@@ -180,7 +177,7 @@
             Snohomish, WA 98290
           </span>
         </p>
-      </div>
+      </div> -->
       <div>
         <h3>Questions?</h3>
         <p>N: 360 - 319 - 9896 </br>nwinkelb@gmail.com</p>
@@ -211,13 +208,13 @@
 
   <div id="location-map"></div>
 
-  <div class="scroll-over-image second"></div>
+  <div id="scroll-over-2" class="scroll-over-image second"><div></div></div>
 
 	<div id="rsvp">
     <h2>RSVP</h2>
     <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebPFbZDd5hdfkDGIZlQUt8GiofzLxIVPwhkZ2-MQxfjicYFA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> -->
     <div id="wufoo-z6mp2wn138b7u3">
-      Fill out my <a href="https://nickwinkelbauer.wufoo.com/forms/z6mp2wn138b7u3">online form</a>.
+      Fill out my <a href="https://nickwinkelbauer.wufoo.com/forms/z6mp2wn138b7u3" class="external-link">online form</a>.
     </div>
     <script type="text/javascript">var z6mp2wn138b7u3;(function(d, t) {
     var s = d.createElement(t), options = {
@@ -239,8 +236,8 @@
 
 	<div id="registry">
      <!--  <h2>Registry</h2> -->
-      <a class="zola-registry-img" href="https://www.zola.com/registry/nickandsue"><img src="assets/zola-white.png" alt="Our Registry" height="150px"/></a>
-      <a role="button" class="zola-registry-link" href="https://www.zola.com/registry/nickandsue"><button>Our Zola Wedding Registry</button></a>
+      <a class="zola-registry-img external-link" href="https://www.zola.com/registry/nickandsue"><img src="assets/zola-white.png" alt="Our Registry" height="150px"/></a>
+      <a role="button" class="zola-registry-link external-link" href="https://www.zola.com/registry/nickandsue"><button>Our Zola Wedding Registry</button></a>
 	</div>
 
   <footer>
@@ -274,5 +271,17 @@
 
 
 <!-- insert js -->
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/easing/EasePack.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenLite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/1.6.2/kute.min.js"></script> <!-- core KUTE.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/1.6.2/kute-svg.min.js"></script> <!-- SVG Plugin -->
+  <script type='text/javascript' src='js/site.js'></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxydikQXieccPGreddQF7h6uXPo81MG_w&callback=initMap"></script>
 </body>
 </html>	

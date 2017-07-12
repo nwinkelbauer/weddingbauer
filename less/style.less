@@ -40,7 +40,7 @@ p {
 #header {
 	z-index: 10;
 	width: 100%;
-	height: 55px;
+	min-height: 55px;
 	background-color: rgba(255, 255, 255, .95);
 	position: fixed;
 	top: 0;
@@ -66,7 +66,9 @@ p {
 	button {
 		padding: 0;
 	    border: 0;
-	    float: right;
+	    position: absolute;
+	    right: 0;
+	    top: 0;
 	    background: none;
 	    display: none;
 	    z-index: 10;
@@ -74,6 +76,9 @@ p {
 			height: 25px;
 			width: auto;
 			margin: 15px;
+			#close {
+				//display: none;
+			}
 		}
 	}
 
@@ -87,14 +92,28 @@ p {
 }
 
 #home {
-	background: url('assets/hero.jpg') no-repeat fixed center bottom;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	height: 100%;
-	width: 100%;
-	position: absolute;
+	div.parallaxChild {
+		background: url('assets/hero.jpg') no-repeat center bottom;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		//background-attachment: fixed;
+		height: 100%;
+		width: 100%;
+		position: relative;
+		top: -40%;
+	}
+	div.parallaxText {
+		top: -125%;
+	    position: relative;
+	    height: 80vh;
+	}
+	overflow: hidden;
+	height: 100vh;
+	// height: 100%;
+	// width: 100%;
+	// position: absolute;
 
 	h1{
 		margin: 100px 0 0 50px;   
@@ -175,13 +194,24 @@ p {
 div.scroll-over-image {
 	width: 100%;
 	height: 300px;
-	background: url("assets/bg2.jpg") no-repeat fixed center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	&.second{
-		background: url("assets/bg1.jpg") no-repeat fixed center center;
+	overflow: hidden;
+	div {
+		background: url("assets/bg2.jpg") no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		//background-attachment: fixed;
+		height: 200%;
+		top: -100%;
+		position: relative;
+	}
+	&.second div {
+		background: url("assets/bg1.jpg") no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 }
 
@@ -192,6 +222,7 @@ div.scroll-over-image {
 	width: 100%;
 	.container {
 		margin: 50px;
+		min-height: 400px;
 	}
 	span.contact {
 		font-size: 28px;
@@ -342,9 +373,15 @@ div.scroll-over-image {
 			a.home{
 				text-align: center;
 				float: none;
+				display: block;
 			}
-			button {
-				display: none;
+			button svg {
+				#hamburger {
+					display: none;
+				}
+				#close {
+					display: block;
+				}
 			}
 			ul {
 				display: block;
@@ -362,6 +399,7 @@ div.scroll-over-image {
 			width: auto;
 			right: 230px;
 			left: inherit;
+			height: 290px;
 		}
 		.container {
 			margin: 30px;
