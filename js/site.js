@@ -111,28 +111,66 @@ function initMap() {
         });
 }
 
+
 $(function(){
+
+	function pathPrepare ($el) {
+		var lineLength = $el[0].getTotalLength();
+		$el.css("stroke-dasharray", lineLength);
+		$el.css("stroke-dashoffset", lineLength);
+	}
 	
+	var $word = $("path#word");
+	var $dot = $("path#dot");
+
+	// prepare SVG
+	pathPrepare($word);
+	pathPrepare($dot);
+
 	// init controller
-	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter"}});
 
 	// build scenes
-	new ScrollMagic.Scene({triggerElement: "#home"})
-					.setTween("#home > div.parallax", {y: "80%", ease: Linear.easeNone})
+	new ScrollMagic.Scene({triggerElement: "#home", duration: "200%"})
+					.setTween("#home > div.parallax", {y: "100%", ease: Linear.easeNone})
 					.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#scroll-over-1"})
+	new ScrollMagic.Scene({triggerElement: "#scroll-over-1", duration: "160%"})
 					.setTween("#scroll-over-1 > div", {y: "80%", ease: Linear.easeNone})
 					.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#scroll-over-2"})
+	new ScrollMagic.Scene({triggerElement: "#scroll-over-2", duration: "160%"})
 					.setTween("#scroll-over-2 > div", {y: "80%", ease: Linear.easeNone})
 					.addTo(controller);
+
+	// build tween
+	var tween = new TimelineMax()
+		.add(TweenMax.to($word, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+		.add(TweenMax.to($dot, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}));  // draw dot for 0.1
+		//.add(TweenMax.to("path", 1, {stroke: "#33629c", ease:Linear.easeNone}), 0);			// change color during the whole thing
+
+	 new ScrollMagic.Scene({triggerElement: "#trigger1", duration: '300px', tweenChanges: true})
+					.setTween(tween)
+					.addIndicators() // add indicators (requires plugin)
+					.addTo(controller)
+					.on("end", function (event) {
+					    $word.attr("class", "revealed");
+					    $dot.attr("class", "revealed");
+					    this.destroy();
+					});
 
 
 	$("#mobile-nav").on("click" , function(){
 		$(this).parent().toggleClass("mobile-open");
-		//var tween = KUTE.fromTo('#hamburger', {path: '#hamburger' }, { path: '#close' }, {morphPrecision: 1}).start();
+		if( $(this).parent().hasClass("mobile-open") ) {
+			KUTE.fromTo('#hamburger1', {path: '#hamburger1' }, { path: '#close1' }, {morphPrecision: 1}).start();
+			KUTE.fromTo('#hamburger2', {path: '#hamburger2' }, { path: '#close1' }, {morphPrecision: 1}).start();
+			KUTE.fromTo('#hamburger3', {path: '#hamburger3' }, { path: '#close2' }, {morphPrecision: 1}).start();
+		} else {
+			KUTE.fromTo('#hamburger1', { path: '#close1' }, {path: '#menu1' }, {morphPrecision: 1}).start();
+			KUTE.fromTo('#hamburger2', { path: '#close1' }, {path: '#menu2' }, {morphPrecision: 1}).start();
+			KUTE.fromTo('#hamburger3', { path: '#close2' }, {path: '#menu3' }, {morphPrecision: 1}).start();
+		}
 	});
 
 	$("a:not(.external-link)").on("click", function(e){

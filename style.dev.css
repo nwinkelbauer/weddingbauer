@@ -47,8 +47,21 @@ p {
 }
 #header a.home {
   float: left;
-  margin: 12px 15px;
-  display: none;
+  margin: 7px 15px 0;
+}
+#header a.home path#word,
+#header a.home path#dot {
+  fill: rgba(0, 0, 0, 0);
+  stroke: #000000;
+  stroke-width: 10px;
+  -webkit-transition: fill 2s, stroke 2s, stroke-width 2s;
+  transition: fill 2s, stroke 2s, stroke-width 2s;
+}
+#header a.home path#word.revealed,
+#header a.home path#dot.revealed {
+  fill: #000000;
+  stroke: rgba(0, 0, 0, 0);
+  stroke-width: 0;
 }
 #header a:not(.home):hover,
 #header a:not(.home):active,
@@ -90,7 +103,7 @@ p {
   height: 100%;
   width: 100%;
   position: relative;
-  top: -40%;
+  top: -50%;
 }
 #home div.parallaxText {
   top: -125%;
@@ -98,7 +111,7 @@ p {
   height: 80vh;
 }
 #home h1 {
-  margin: 100px 0 0 50px;
+  margin: 30px 0 0 75px;
 }
 #home div.save-the-date {
   position: absolute;
@@ -225,12 +238,14 @@ div.scroll-over-image.second div {
   height: 300px;
   background-color: white;
 }
-#rsvp {
+#questions {
   width: 70%;
-  margin: 0 auto 0 auto;
+  margin: 50px auto;
+  text-align: center;
 }
-#rsvp #wuf-adv {
-  display: none;
+#questions p {
+  display: inline-block;
+  width: 30%;
 }
 #registry {
   width: 100%;
@@ -275,7 +290,7 @@ div.scroll-over-image.second div {
   display: block;
 }
 #footer a.home img {
-  height: 30px;
+  height: 40px;
 }
 #footer a:not(.home):hover,
 #footer a:not(.home):active,
@@ -324,17 +339,14 @@ div.scroll-over-image.second div {
     float: none;
     display: block;
   }
-  #header.mobile-open button svg #hamburger {
-    display: none;
-  }
-  #header.mobile-open button svg #close {
-    display: block;
-  }
   #header.mobile-open ul {
     display: block;
   }
+  #home h1 {
+    margin-top: 30px;
+  }
   #home h1 img {
-    width: 400px;
+    height: 250px;
   }
   #details .details-block {
     width: 100%;
@@ -351,11 +363,10 @@ div.scroll-over-image.second div {
 }
 @media (max-width: 480px) {
   #home h1 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 25px auto;
     width: 300px;
   }
   #home h1 img {
-    width: 300px;
+    height: 200px;
   }
 }

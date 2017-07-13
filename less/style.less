@@ -36,6 +36,10 @@ p {
 	font-size: 36px;
 	margin: 15px 0;
 }
+// #trigger1 {
+// 	position: absolute;
+// 	top: 100%;
+// }
 
 #header {
 	z-index: 10;
@@ -53,9 +57,22 @@ p {
 		font-size: 20px;
 		&.home {
 			float: left;
-	    	margin: 12px 15px;
-	    	display: none;
+	    	margin: 7px 15px 0;
+	    	//display: none;
 	    	//display: block;
+	    	path#word, 
+	    	path#dot {
+	    		fill: rgba(0,0,0,0);
+	    		stroke: rgba(0,0,0,1);
+	    		stroke-width: 10px;
+	    		-webkit-transition: fill 2s, stroke 2s, stroke-width 2s;
+	    		transition: fill 2s, stroke 2s, stroke-width 2s;
+	    		&.revealed {
+		    		fill: rgba(0,0,0,1);
+		    		stroke: rgba(0, 0, 0, 0);
+		    		stroke-width: 0;
+		    	}
+	    	}
 		}
 		&:not(.home):hover,
 		&:not(.home):active,
@@ -102,7 +119,7 @@ p {
 		height: 100%;
 		width: 100%;
 		position: relative;
-		top: -40%;
+		top: -50%;
 	}
 	div.parallaxText {
 		top: -125%;
@@ -116,7 +133,7 @@ p {
 	// position: absolute;
 
 	h1{
-		margin: 100px 0 0 50px;   
+		margin: 30px 0 0 75px;   
 	}
 
 	div.save-the-date {
@@ -261,11 +278,24 @@ div.scroll-over-image {
 	//border-top: 1px black solid;
 }
 
-#rsvp {
+// #rsvp {
+// 	min-height: 300px;
+// 	width: 70%;
+// 	margin: 0 auto 0 auto;
+// 	text-align: center;
+// 	#wuf-adv {
+// 		display: none;
+// 	}
+// }
+
+#questions {
+	//min-height: 300px;
 	width: 70%;
-	margin: 0 auto 0 auto;
-	#wuf-adv {
-		display: none;
+	margin: 50px auto;
+	text-align: center;
+	p {
+		display: inline-block;
+    	width: 30%;
 	}
 }
 
@@ -310,7 +340,7 @@ div.scroll-over-image {
 	    	margin: 12px 15px;
 	    	display: block;
 	    	img {
-	    		height: 30px;
+	    		height: 40px;
 	    	}
 		}
 		&:not(.home):hover,
@@ -376,20 +406,23 @@ div.scroll-over-image {
 				display: block;
 			}
 			button svg {
-				#hamburger {
-					display: none;
-				}
-				#close {
-					display: block;
-				}
+				// #hamburger {
+				// 	display: none;
+				// }
+				// #close {
+				// 	display: block;
+				// }
 			}
 			ul {
 				display: block;
 			}
 		}
 	}
-	#home h1 img {
-		width: 400px;
+	#home h1 {
+		margin-top: 30px;
+	 	img {
+			height: 250px;
+		}
 	}
 	#details {
 		.details-block {
@@ -409,11 +442,10 @@ div.scroll-over-image {
 
 @media(max-width:480px) {
 	#home h1 {
-		margin-left: auto;
-		margin-right: auto;
+		margin: 25px auto;
 		width: 300px;
 		img {
-			width: 300px;
+			height: 200px;
 		}
 	}
 }
