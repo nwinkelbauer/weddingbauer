@@ -65,7 +65,8 @@ p {
 }
 #header a:not(.home):hover,
 #header a:not(.home):active,
-#header a:not(.home):focus {
+#header a:not(.home):focus,
+#header a:not(.home).active {
   text-decoration: underline;
 }
 #header button {
@@ -106,9 +107,10 @@ p {
   top: -50%;
 }
 #home div.parallaxText {
-  top: -125%;
+  top: -150%;
   position: relative;
   height: 80vh;
+  opacity: 1;
 }
 #home h1 {
   margin: 30px 0 0 75px;
@@ -186,7 +188,7 @@ div.scroll-over-image div {
   -o-background-size: cover;
   background-size: cover;
   height: 200%;
-  top: -100%;
+  top: -90%;
   position: relative;
 }
 div.scroll-over-image.second div {
@@ -195,6 +197,7 @@ div.scroll-over-image.second div {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  top: -115%;
 }
 #details {
   position: relative;
@@ -324,7 +327,12 @@ div.scroll-over-image.second div {
   }
   #header ul {
     float: none;
-    display: none;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    -webkit-transition: visibility 0s, opacity .5s linear, height .5s linear;
+    transition: visibility 0s, opacity .5s linear, height .5s linear;
   }
   #header ul li {
     display: block;
@@ -340,7 +348,9 @@ div.scroll-over-image.second div {
     display: block;
   }
   #header.mobile-open ul {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: 160px;
   }
   #home h1 {
     margin-top: 30px;

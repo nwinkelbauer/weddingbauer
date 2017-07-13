@@ -130,9 +130,15 @@ $(function(){
 	// init controller
 	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter"}});
 
+	// build tween
+	var tween1 = new TimelineMax()
+		.add(TweenMax.to($("#home-bg"), 1, {y: "100%", ease: Linear.easeNone})) // background
+		.add(TweenMax.set($("#home-text"), {autoAlpha:2}), 0)
+		.add(TweenMax.to($("#home-text"), 1, {autoAlpha: 0, y: "160%", ease: Power0.easeIn}), 0);  // text
+
 	// build scenes
 	new ScrollMagic.Scene({triggerElement: "#home", duration: "200%"})
-					.setTween("#home > div.parallax", {y: "100%", ease: Linear.easeNone})
+					.setTween(tween1)
 					.addTo(controller);
 
 	new ScrollMagic.Scene({triggerElement: "#scroll-over-1", duration: "160%"})
@@ -151,7 +157,6 @@ $(function(){
 
 	 new ScrollMagic.Scene({triggerElement: "#trigger1", duration: '300px', tweenChanges: true})
 					.setTween(tween)
-					.addIndicators() // add indicators (requires plugin)
 					.addTo(controller)
 					.on("end", function (event) {
 					    $word.attr("class", "revealed");
@@ -176,5 +181,9 @@ $(function(){
 	$("a:not(.external-link)").on("click", function(e){
 		e.preventDefault();
 		e.stopPropagation();
+		$('html, body').animate({
+	        scrollTop: $(e.target.hash).offset().top - 100
+	    }, 2000);
+	    //controller.scrollTo(e.target.hash)
 	})
 })

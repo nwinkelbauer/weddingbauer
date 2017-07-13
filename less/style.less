@@ -76,7 +76,8 @@ p {
 		}
 		&:not(.home):hover,
 		&:not(.home):active,
-		&:not(.home):focus {
+		&:not(.home):focus,
+		&:not(.home).active, {
 			text-decoration: underline;
 		}
 	}
@@ -122,9 +123,10 @@ p {
 		top: -50%;
 	}
 	div.parallaxText {
-		top: -125%;
+		top: -150%;
 	    position: relative;
 	    height: 80vh;
+	    opacity: 1;
 	}
 	overflow: hidden;
 	height: 100vh;
@@ -220,7 +222,7 @@ div.scroll-over-image {
 		background-size: cover;
 		//background-attachment: fixed;
 		height: 200%;
-		top: -100%;
+		top: -90%;
 		position: relative;
 	}
 	&.second div {
@@ -229,6 +231,7 @@ div.scroll-over-image {
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
+		top: -115%;
 	}
 }
 
@@ -389,7 +392,12 @@ div.scroll-over-image {
 		}
 		ul {
 			float: none;
-			display: none;
+			display: block;
+			visibility: hidden;
+			opacity: 0;
+			height: 0;
+			-webkit-transition: visibility 0s, opacity .5s linear, height .5s linear;
+			transition: visibility 0s, opacity .5s linear, height .5s linear;
 			li {
 				display: block;
 				text-align: center;
@@ -414,7 +422,9 @@ div.scroll-over-image {
 				// }
 			}
 			ul {
-				display: block;
+				visibility: visible;
+				opacity: 1;
+				height: 160px;
 			}
 		}
 	}
