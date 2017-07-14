@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Carolina Mountains';
+  font-family: 'Bromello';
   font-style: normal;
   font-weight: 400;
-  src: url('assets/carolina-mountains.ttf') format('truetype');
+  src: url('assets/bromello.ttf') format('truetype');
   //unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 @font-face {
@@ -18,7 +18,7 @@ body {
 }
 
 h2 , h3 {
-	font-family: 'Carolina Mountains';
+	font-family: 'Bromello';
 }
 
 h2 {
@@ -53,7 +53,7 @@ p {
 	a {
 		text-decoration: none;
 		color: black;
-		font-family: 'Carolina Mountains';
+		font-family: 'Bromello';
 		font-size: 20px;
 		&.home {
 			float: left;
@@ -204,7 +204,7 @@ p {
 		}
 		p {
 			text-align: center;
-			font-family: 'Carolina Mountains';
+			font-family: 'Bromello';
 			font-size: 24px;
 			margin-top: 0;
 		}
@@ -308,7 +308,10 @@ div.scroll-over-image {
 #registry {
 	width: 100%;
 	background: url('assets/BG-tree.jpg') no-repeat center center;
-	background-size: cover; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	border-top: 1px dotted #CCCCCC;
 	margin: 0 auto 0 auto;
 	padding: 40px 0 20px 0;
@@ -340,7 +343,7 @@ div.scroll-over-image {
 	a {
 		text-decoration: none;
 		color: black;
-		font-family: 'Carolina Mountains';
+		font-family: 'Bromello';
 		font-size: 20px;
 		&.home {
 	    	margin: 12px 15px;
@@ -464,14 +467,48 @@ div.scroll-over-image {
 }
 
 @media(max-width:480px) {
-	#home h1 {
-		margin: 25px auto;
-		width: 300px;
-		img {
-			height: 200px;
+	#home {
+		h1 {
+			margin: 25px auto;
+			width: 300px;
+			img {
+				height: 200px;
+			}
+		}
+		div.parallaxChild {
+			background: url('assets/hero-mobile.jpg') no-repeat center bottom;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+
 		}
 	}
 	#details svg {
 		right: 300px; 
+	}
+	div.scroll-over-image {
+		div {
+			background: url("assets/bg2-mobile.jpg") no-repeat center center;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		&.second div {
+			background: url("assets/bg1-mobile.jpg") no-repeat center center;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			//top: -115%;
+		}
+	}
+	#registry {
+		background: url('assets/BG-tree.jpg') no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 }
