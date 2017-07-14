@@ -225,6 +225,7 @@ div.scroll-over-image.second div {
 #details div.details-block:nth-child(odd) {
   text-align: right;
   float: right;
+  min-height: 275px;
 }
 #details div.details-block div {
   margin-bottom: 40px;
@@ -308,6 +309,9 @@ div.scroll-over-image.second div {
   #story {
     width: 95%;
   }
+  #questions {
+    width: 95%;
+  }
 }
 @media only screen and (max-width: 930px) {
   #story span.heart-block {
@@ -316,6 +320,18 @@ div.scroll-over-image.second div {
   }
   #story span.heart-block div.mapheartsvg {
     width: 230px;
+  }
+  #details .details-block {
+    width: 100%;
+  }
+  #details svg {
+    width: auto;
+    right: 350px;
+    left: inherit;
+    height: 290px;
+  }
+  #details .container {
+    margin: 30px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -358,17 +374,8 @@ div.scroll-over-image.second div {
   #home h1 img {
     height: 250px;
   }
-  #details .details-block {
-    width: 100%;
-  }
-  #details svg {
-    width: auto;
-    right: 230px;
-    left: inherit;
-    height: 290px;
-  }
-  #details .container {
-    margin: 30px;
+  #questions p {
+    width: 95%;
   }
 }
 @media (max-width: 480px) {
@@ -378,5 +385,8 @@ div.scroll-over-image.second div {
   }
   #home h1 img {
     height: 200px;
+  }
+  #details svg {
+    right: 300px;
   }
 }

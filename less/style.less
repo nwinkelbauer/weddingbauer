@@ -260,6 +260,7 @@ div.scroll-over-image {
 		&:nth-child(odd){
 			text-align: right;
 			float: right;
+			min-height: 275px;
 		}
 		div {
 			margin-bottom: 40px;
@@ -365,6 +366,9 @@ div.scroll-over-image {
 	#story {
 		width: 95%;
 	}
+	#questions {
+		width: 95%;
+	}
 
 }
 
@@ -374,6 +378,20 @@ div.scroll-over-image {
 		text-align: center;
 		div.mapheartsvg {
 			width: 230px;
+		}
+	}
+	#details {
+		.details-block {
+			width: 100%;
+		}
+		svg {
+			width: auto;
+			right: 350px;
+			left: inherit;
+			height: 290px;
+		}
+		.container {
+			margin: 30px;
 		}
 	}
 
@@ -434,19 +452,9 @@ div.scroll-over-image {
 			height: 250px;
 		}
 	}
-	#details {
-		.details-block {
-			width: 100%;
-		}
-		svg {
-			width: auto;
-			right: 230px;
-			left: inherit;
-			height: 290px;
-		}
-		.container {
-			margin: 30px;
-		}
+	#questions p {
+		width: 95%;
+
 	}
 }
 
@@ -457,5 +465,8 @@ div.scroll-over-image {
 		img {
 			height: 200px;
 		}
+	}
+	#details svg {
+		right: 300px; 
 	}
 }
