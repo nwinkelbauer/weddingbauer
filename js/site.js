@@ -181,9 +181,12 @@ $(function(){
 	$("a:not(.external-link)").on("click", function(e){
 		e.preventDefault();
 		e.stopPropagation();
-		$('html, body').animate({
-	        scrollTop: $(e.target.hash).offset().top - 100
+		$("#mobile-nav").trigger("click")
+		$target = (e.target.hash === "#home") ? 0 : ($(e.target.hash).offset().top - 50);
+ 		$('html, body').animate({
+	        scrollTop: $target
 	    }, 2000);
+
 	    //controller.scrollTo(e.target.hash)
 	})
 })
