@@ -206,8 +206,9 @@ div.scroll-over-image.second div {
   width: 100%;
 }
 #details .container {
-  margin: 50px;
+  margin: 50px auto;
   min-height: 400px;
+  max-width: 1200px;
 }
 #details span.contact {
   font-size: 28px;
@@ -308,6 +309,9 @@ div.scroll-over-image.second div {
 @media only screen and (max-width: 1200px) {
   #story {
     width: 95%;
+  }
+  #details .container {
+    margin: 50px;
   }
   #questions {
     width: 95%;
