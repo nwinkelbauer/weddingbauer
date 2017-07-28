@@ -402,8 +402,15 @@ div.scroll-over-image.second div {
     -o-background-size: cover;
     background-size: cover;
   }
+  #story span.heart-block div.mapheartsvg svg.active .hovercolor {
+    fill: rgba(255, 255, 255, 0.6);
+  }
+  #story span.heart-block div.mapheartsvg svg.active .svg-heart-text {
+    display: block;
+    fill: black;
+  }
   #details svg {
-    right: 300px;
+    right: 260px;
   }
   div.scroll-over-image div {
     background: url("assets/bg2-mobile.jpg") no-repeat center center;
